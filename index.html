@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Grocery Budget Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Grocery Budget Planner</h1>
+        
+        <div class="card">
+            <h2><i class="fas fa-calculator"></i> Budget Recommendations</h2>
+            <div class="input-group">
+                <div style="position: relative; flex: 1;">
+                    <span class="currency-symbol">₹</span>
+                    <input type="number" id="budget" placeholder="Enter your budget in INR" min="100" step="100" style="padding-left: 2rem;">
+                </div>
+                <button onclick="getRecommendations()">
+                    <i class="fas fa-search"></i> Get Recommendations
+                </button>
+            </div>
+            <div id="recommendations-loading" class="loading" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i> Generating recommendations...
+            </div>
+            <div id="recommendations" class="recommendations"></div>
+        </div>
+
+        <div class="card">
+            <h2><i class="fas fa-robot"></i> Grocery Planning Assistant</h2>
+            <div class="chat-container" id="chat-container"></div>
+            <div class="input-group">
+                <input type="text" id="chat-input" placeholder="Ask about meal planning, grocery shopping, or budgeting...">
+                <button onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i> Send
+                </button>
+            </div>
+            <div id="chat-loading" class="loading" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i> Assistant is typing...
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
